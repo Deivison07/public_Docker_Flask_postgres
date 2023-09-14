@@ -1,0 +1,36 @@
+version: '3'
+services:
+    flask-postgres:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      ports:
+        - "5000:5000"
+      volumes:
+        - "./:/app"
+      env_file:
+        - .env
+      networks:
+        - minha-rede
+
+    postgres:
+      image: postgres:14.6
+      restart: always
+      ports:
+        - "5430:5432"
+      volumes:
+        - ./database/:/docker-entrypoint-initdb.d/
+        - data-db:/var/lib/postgresql/data
+      environment:
+        POSTGRES_USER: ${DATABASE_USER}
+        POSTGRES_PASSWORD: ${DATABASE_PASS}
+        POSTGRES_DB: ${DATABASE_NAME}
+      networks:
+        - minha-rede
+
+
+volumes:
+  data-db:
+
+networks:
+  minha-rede:
