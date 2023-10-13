@@ -1,6 +1,6 @@
 # Projeto de Rest-API com Flask, Sqlalchemy, Marshmallow, PostgreSQL e Docker
 
-![Inserir aqui a imagem do projeto](inserir_link_para_a_imagem.png)
+![projeto_com_flask](projeto_com_flask.png)
 
 ## Descrição do Projeto
 
@@ -25,11 +25,17 @@ O projeto proposto visa criar uma Rest-API altamente eficiente, segura e facilme
 ## Como Iniciar
 
 1. Clone este repositório.
-2. Instale as dependências.
-3. Execute a aplicação.
-
-```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
-pip install -r requirements.txt
-python app.py
+2. Instale o Docker na maquina local.
+3. Crie um arquivo .env com as variaveis:
+   
+   ```bash
+   API_KEY = ""
+   DATABASE_IP=
+   DATABASE_NAME=
+   DATABASE_PORT=
+   DATABASE_USER=
+   DATABASE_PASS=
+   
+4. Execute a aplicação.
+  ```bash
+    docker-compose up
