@@ -13,3 +13,4 @@ class Usuario(db.Model):
     cpf = db.Column(db.String(14), unique=True)
     sexo = db.Column(db.CHAR(1), db.CheckConstraint('sexo IN (\'F\', \'M\')'))
 
+
